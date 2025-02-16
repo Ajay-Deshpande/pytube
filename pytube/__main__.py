@@ -338,7 +338,7 @@ class YouTube:
             return self._title
 
         try:
-            self._title = self.vid_info['videoDetails']['title']
+            self._title = self.vid_info.get('videoDetails', {}).get('title', "Title Unavailable")
         except KeyError:
             # Check_availability will raise the correct exception in most cases
             #  if it doesn't, ask for a report.
