@@ -380,7 +380,7 @@ class YouTube:
 
         :rtype: int
         """
-        return int(self.vid_info.get('videoDetails', {}).get('lengthSeconds'))
+        return int(self.vid_info.get('videoDetails', {}).get('lengthSeconds', 0))
 
     @property
     def views(self) -> int:
